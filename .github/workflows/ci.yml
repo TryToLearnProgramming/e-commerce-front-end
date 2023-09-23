@@ -32,7 +32,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/e-commerce-front-end:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/e-commerce-front-end-demo:${{ github.sha }}
 
       - name: The current paths
         run:
@@ -40,7 +40,7 @@ jobs:
       - name: Checkout GitOps
         uses: actions/checkout@v3
         with:
-          repository: TryToLearnProgramming/gitops
+          repository: dipoesan/gitops
           path: ./gitops
           ref: k-argo
           token: ${{ secrets.REPO_PAT }}
